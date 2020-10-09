@@ -2,7 +2,7 @@ import styles from '../styles.module.css'
 
 const Code = (p) => <code className={styles.inlineCode} {...p} />
 
-const IndexPage = () => (
+const IndexPage = (props) => (
   <div className={styles.container}>
     <div className={styles.card}>
       <h1>Environment Variables with Next.js</h1>
@@ -111,6 +111,9 @@ export async function getStaticProps() {
     '[Node.js only] ENV_LOCAL_VARIABLE:',
     process.env.ENV_LOCAL_VARIABLE
   )
+  
+  const envs = process.env
+  console.log(envs)
 
   return { props: {} }
 }
